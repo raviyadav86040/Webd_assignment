@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Shop</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fas fa-store"></i>
+                <h1>E - Commerce Website</h1>
+            </div>
+            <div class="search-bar">
+                <input type="text" id="search" placeholder="Search products...">
+                <button><i class="fas fa-search"></i></button>
+            </div>
+            <div class="header-right">
+                <div class="wishlist" id="wishlist-icon">
+                    <i class="fas fa-heart"></i>
+                    <span id="wishlist-count">0</span>
+                </div>
+                <div class="cart" id="cart-icon">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span id="cart-count">0</span>
+                </div>
+                <div class="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </div>
+            </div>
+        </header>
+
+        <nav class="categories">
+            <button class="category-btn active" data-category="all">All</button>
+            <button class="category-btn" data-category="clothing">Clothing</button>
+            <button class="category-btn" data-category="electronics">Electronics</button>
+            <button class="category-btn" data-category="accessories">Accessories</button>
+            <button class="category-btn" data-category="home">Home & Living</button>
+        </nav>
+
+        <div class="filters">
+            <div class="sort-by">
+                <label for="sort">Sort by:</label>
+                <select id="sort">
+                    <option value="default">Default</option>
+                    <option value="price-low">Price: Low to High</option>
+                    <option value="price-high">Price: High to Low</option>
+                    <option value="name">Name</option>
+                </select>
+            </div>
+            <div class="price-range">
+                <label for="price-filter">Price Range:</label>
+                <input type="range" id="price-filter" min="0" max="1000" step="10" value="1000">
+                <span id="price-value">$1000</span>
+            </div>
+        </div>
+
+        <div class="products" id="products">
+            <!-- Products will be added here by JavaScript -->
+        </div>
+
+        <div class="cart-sidebar" id="cart-sidebar">
+            <div class="cart-header">
+                <h2>Your Cart</h2>
+                <button class="close-cart"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="cart-list"></div>
+            <div class="cart-summary">
+                <div class="subtotal">
+                    <span>Subtotal:</span>
+                    <span>$<span id="subtotal">0</span></span>
+                </div>
+                <div class="shipping">
+                    <span>Shipping:</span>
+                    <span>$<span id="shipping">0</span></span>
+                </div>
+                <div class="discount">
+                    <span>Discount:</span>
+                    <span>$<span id="discount">0</span></span>
+                </div>
+                <div class="total">
+                    <span>Total:</span>
+                    <span>$<span id="total">0</span></span>
+                </div>
+            </div>
+            <div class="promo-code">
+                <input type="text" id="promo-input" placeholder="Enter promo code">
+                <button id="apply-promo">Apply</button>
+            </div>
+            <button id="checkout" class="checkout-btn">
+                <i class="fas fa-lock"></i> Secure Checkout
+            </button>
+        </div>
+
+        <div class="wishlist-sidebar" id="wishlist-sidebar">
+            <div class="wishlist-header">
+                <h2>Wishlist</h2>
+                <button class="close-wishlist"><i class="fas fa-times"></i></button>
+            </div>
+            <div id="wishlist-items"></div>
+        </div>
+
+        <div class="overlay" id="overlay"></div>
+
+        <div class="notification" id="notification">
+            <i class="fas fa-check-circle"></i>
+            <span id="notification-text"></span>
+        </div>
+
+        <div class="quick-view" id="quick-view">
+            <div class="quick-view-content">
+                <button class="close-quick-view"><i class="fas fa-times"></i></button>
+                <div class="quick-view-details">
+                    <!-- Quick view content will be added by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section about">
+                    <h3>About Premium Shop</h3>
+                    <p>Your one-stop destination for premium quality products. We offer the best selection of clothing, electronics, accessories, and home goods.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Products</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-map-marker-alt"></i> 123 Premium Street, City, Country</p>
+                    <p><i class="fas fa-phone"></i> +999-675688786</p>
+                    <p><i class="fas fa-envelope"></i> info@premiumshop.com</p>
+                </div>
+                <div class="footer-section newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter for updates and exclusive offers.</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Enter your email">
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Ravi Yadav. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
